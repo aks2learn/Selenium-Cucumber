@@ -1,0 +1,19 @@
+INTERVIEW QUESTIONS:
+------------------------
+
+Automation:
+
+1. Date picker value is getting appended to the end of the field rather than replacing the value, what can be a possible solution?
+2. 
+
+
+
+
+
+
+Manual:
+
+
+
+
+API:

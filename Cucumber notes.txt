@@ -1,0 +1,60 @@
+Cucumber Notes:
+
+1. Feature file ---Scenario
+	Feature keyword
+	Scenario keyword
+
+2. Step defenition ---Steps
+3. Runner 
+
+
+Steps:
+Step 1 - Create a new maven project
+Step 2 - Add maven dependencies
+  Cucumber Java | Cucumber JUnit | JUnit | Selenium Java
+  <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+
+Step 3 - Create a folder Features under src/test/resources
+Name it Features (any name is fine)
+
+Step 4 - Under features folder create a new feature file login.feature
+Step 5 - Download cucumber plugin from Eclipse Marketplace
+Step 6 - Create feature file and add contents
+Things which can be added in a feature file 
+Feature
+Scenario
+Steps
+Scenario Outline
+Example
+Tags
+Comments
+
+Step 7 - Try to run the feature file
+Step 8 - Add Step Definitions / Glue Code under src/test/java package
+Step 9 - Create a Runner class
+
+import org.junit.runner.RunWith;   
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;  
+
+@RunWith(Cucumber.class) 
+@CucumberOptions(features="src/test/resources/Features",
+glue={"StepDefinitions"})
+public class TestRunner {
+}
+
+monochrome = true
+
+plugin = { "pretty", "html:target/reports"}
+plugin = { "pretty", "json:target/reports/cucumber.json"}
+plugin = { "pretty",  "junit:target/reports/cucumber.xml"}
+
+tags="@smoketest"
+
+////Usage Report
+If we are more concerned about the time taken by each Step Definition, 
+then we should use the usage plugin. This is how we specify the same in @CucumberOptions:
+
+@CucumberOptions( plugin = { "usage" })
+helpful link : https://www.toolsqa.com/selenium-cucumber-framework/cucumber-reports/
+
